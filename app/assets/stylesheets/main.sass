@@ -1,0 +1,244 @@
+$main: #e01f1f
+$white: white
+$support: lightgray
+$cover: #b2b2b2
+*
+  box-sizing: border-box
+
+// h1, h2, h3, h4, h5, h6
+  // font-family: 'Raleway', sans-serif
+
+html, body
+  margin: 0
+  padding: 0
+  font-family: 'Josefin Slab', serif
+
+.cf:before, .cf:after
+  display: table
+  content: ""
+
+.cf:after
+  clear: both
+
+.wrapper
+  width: 1140px
+  max-width: 90%
+  margin: 0 auto
+
+.right
+  float: right
+
+.left
+  float: left
+
+// ***********LOGO *****************8
+
+
+header
+  padding: 1rem 0
+
+.logo
+  float: left
+  font-size: 2rem
+  color: $main
+  text-decoration: none
+
+
+nav
+  float: right
+  a
+    color: $main
+    margin-left: 1.2rem
+    text-decoration: none
+    font-weight: 600
+    padding: .4rem
+    font-family: 'Josefin Slab', serif
+    &:hover
+      color: $support
+      border-bottom: 3px solid $main
+
+
+  input[type='search']
+    outline: none
+    border: none
+    border-bottom: 1px solid $main
+    background: transparent
+    font-size: .95rem
+    margin-right: 1rem
+    width: 15rem
+    padding: .75rem
+    font-family: 'Josefin Slab', serif
+    font-style: italic
+
+.categories
+  padding: 0
+  margin: 0
+  list-style: none
+  height: 35rem
+  li
+    width: 50%
+    height: 35rem
+    float: left
+    display: inline-block
+    position: relative
+    overflow: hidden
+    transition: transform 0.4s, opacity 0.3s 0.3s
+    img
+      width: 100%
+      max-width: 100%
+      height: 100%
+    .category-info
+      background: rgba($cover, .45)
+      padding: 2rem
+      height: 100%
+      width: 100%
+      position: absolute
+      top: auto
+      bottom: 0
+      opacity: 0
+      transform: translateY(100%)
+      transition: transform o.4s, opacity 0.3s 0.3s
+      .header
+        border-bottom: 3px solid white
+        text-align: center
+        text-transform: uppercase
+        color: white
+        max-width: 60%
+        margin: 50% auto
+        font-family: 'Josefin Slab', serif
+  li:hover
+    img
+      transform: scale(1.5)
+      transition: transform 0.4s, opacity 0.1s 0.3s
+    .category-info
+      opacity: 1
+      transform: translateX(0px)
+      transition: transform 0.4s, opacity 0.3s
+
+@media only screen and (max-width: 600px)
+  .categories
+    li
+      width: 100%
+
+
+.interest
+  width: 80%
+  max-width: 100%
+  margin: 2rem auto
+  text-align: center
+  p
+    font-weight: 400
+    font-size: 1.15rem
+  h2
+    text-transform: uppercase
+    color: $main
+    // border-bottom: 2px solid $main
+
+.how-works
+  li
+    width: 25%
+    padding: 1.5rem
+    list-style: none
+    float: left
+    display: inline-block
+    img
+      width: 100%
+      max-width: 100%
+
+// ***********CARDS*******************
+.row
+  margin: 2rem auto
+
+.card
+  width: 25%
+  height: 15rem
+  margin: 0
+  padding: 0
+  .card-image
+    height: 70%
+    img
+      width: 100%
+      max-width: 100%
+      height: 100%
+  .card-content
+    height: 30%
+    width: 100%
+    background: $support
+    padding: .5rem
+    text-align: center
+
+    h4
+      margin: 0
+      // padding-top: .rem
+    p
+      margin: .3rem auto
+.amount
+  color: $main
+  font-weight: 600
+
+.foot
+  min-height: 10rem
+.footer
+  li
+    width: 50%
+    float: left
+    display: inline-block
+  .foot-note
+    max-width: 90%
+    margin: 1rem auto
+    li
+      padding: .5rem
+    li a
+      color: $main
+      text-decoration: none
+      font-size: 1.15rem
+      font-weight: 700
+.bottom
+  max-width: 80%
+  margin: 2rem auto
+
+  .copyright
+    float: left
+    p
+      margin: 0
+  .social-icons
+    color: $main
+    float: right
+    a
+      text-decoration: none
+      color: $main
+      padding: 1rem
+
+
+// ***********Subscription*******************
+.subscribe
+  float: left
+  max-width: 70%
+  margin: 0 auto
+  text-align: center
+  color: $main
+  h2
+    text-transform: capitalize
+  input[type='text']
+    padding: 1rem
+    outline: inherit
+    border: 2px solid $main
+  .button
+    background: $main
+    padding: 1rem
+    text-decoration: none
+    color: white
+    margin-left: 0
+    font-weight: 700
+
+
+// ***********Buttons*******************
+
+.button
+  background: $main
+  padding: 1rem
+  text-decoration: none
+  color: white
+  margin-left: 0
+.round
+  border-radius: 20%
