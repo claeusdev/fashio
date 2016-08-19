@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <div class="section">
+    <div class="col-4">
+      <div class="menu">
+        <h2>My Account</h2>
+        <p><%= @user.email %></p>
+        <hr>
+        <p>My Orders</p>
+        <hr>
+        <h4>My credits</h4>
+        <li>My coupons</li>
+        <li>My coupons</li>
+        <li>claeus points</li>
+        <hr>
+        <h4>Account</h4>
+        <li>My profile</li>
+        <li>My contact cards</li>
+        <li>Contacts</li>
+        <hr>
+        <p><%= @user.created_at %></p>
+      </div>
+    </div>
+    <div class="col-8">
+      <h2>Profile menu</h2>
+      <h2><%= @user.email %></h2>
+    </div>
+  </div>
+</div>

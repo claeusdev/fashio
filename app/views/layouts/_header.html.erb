@@ -2,11 +2,22 @@
   <div class="wrapper">
     <header class="cf">
       <a href="#" class="logo">Claeus</a>
+
       <nav>
         <input type="search" placeholder="Search Brands, Products...">
-        <a href="#">Log In</a>
-        <a href="#" class="">Join</a>
-        <a href="#">Cart(0)</a>
+        <% if user_signed_in? %>
+          <!-- true -->
+          <%= link_to "Sell", pages_sell_path %>
+          <%= link_to "My account", user_path(current_user) %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+          <a href="#">Cart(0)</a>
+        <% else %>
+          <!-- false -->
+          <%= link_to "Log In", new_user_session_path %>
+          <%= link_to "Join", new_user_registration_path %>
+          <a href="#">Cart(0)</a>
+        <% end %>
+
       </nav>
     </header>
   </div>

@@ -2,12 +2,16 @@ $main: #e01f1f
 $white: white
 $support: lightgray
 $cover: #b2b2b2
+
 *
   box-sizing: border-box
 
 // h1, h2, h3, h4, h5, h6
   // font-family: 'Raleway', sans-serif
+a
+  color: $main
 
+  
 html, body
   margin: 0
   padding: 0
@@ -29,6 +33,12 @@ html, body
   float: right
 
 .left
+  float: left
+
+.col-6
+  padding: 0
+  margin: 0
+  width: 50%
   float: left
 
 // ***********LOGO *****************8
@@ -163,15 +173,18 @@ nav
   .card-content
     height: 30%
     width: 100%
-    background: $support
     padding: .5rem
-    text-align: center
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.08)
+    a
+      text-decoration: none
+      color: $main
 
     h4
       margin: 0
       // padding-top: .rem
     p
       margin: .3rem auto
+
 .amount
   color: $main
   font-weight: 600
@@ -189,10 +202,10 @@ nav
     li
       padding: .5rem
     li a
-      color: $main
       text-decoration: none
       font-size: 1.15rem
-      font-weight: 700
+      font-weight: 800
+
 .bottom
   max-width: 80%
   margin: 2rem auto
@@ -223,6 +236,7 @@ nav
     padding: 1rem
     outline: inherit
     border: 2px solid $main
+    font-family: "Raleway", sans-serif
   .button
     background: $main
     padding: 1rem
