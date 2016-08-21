@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Category.where(name: "Men").first_or_create(name: "Men")
+Category.where(name: "Women").first_or_create(name: "Women")

@@ -11,7 +11,7 @@ $cover: #b2b2b2
 a
   color: $main
 
-  
+
 html, body
   margin: 0
   padding: 0
@@ -84,10 +84,10 @@ nav
   padding: 0
   margin: 0
   list-style: none
-  height: 35rem
+  height: 20rem
   li
     width: 50%
-    height: 35rem
+    height: 100%
     float: left
     display: inline-block
     position: relative
@@ -125,10 +125,7 @@ nav
       transform: translateX(0px)
       transition: transform 0.4s, opacity 0.3s
 
-@media only screen and (max-width: 600px)
-  .categories
-    li
-      width: 100%
+
 
 
 .interest
@@ -188,10 +185,13 @@ nav
 .amount
   color: $main
   font-weight: 600
-
+// FOOOOOOOTER
 .foot
   min-height: 10rem
+  background: $main
 .footer
+  margin-bottom: 1.5rem
+
   li
     width: 50%
     float: left
@@ -199,17 +199,18 @@ nav
   .foot-note
     max-width: 90%
     margin: 1rem auto
+
     li
       padding: .5rem
     li a
       text-decoration: none
       font-size: 1.15rem
       font-weight: 800
+      color: white
 
 .bottom
   max-width: 80%
   margin: 2rem auto
-
   .copyright
     float: left
     p
@@ -229,7 +230,7 @@ nav
   max-width: 70%
   margin: 0 auto
   text-align: center
-  color: $main
+  color: $white
   h2
     text-transform: capitalize
   input[type='text']
@@ -238,10 +239,10 @@ nav
     border: 2px solid $main
     font-family: "Raleway", sans-serif
   .button
-    background: $main
+    background: $white
     padding: 1rem
     text-decoration: none
-    color: white
+    color: $main
     margin-left: 0
     font-weight: 700
 

@@ -1,29 +1,35 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @store.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @store.description %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @store.city %>
-</p>
-
-<p>
-  <strong>Website:</strong>
-  <%= @store.website %>
-</p>
-
-<p>
-  <strong>Facebook:</strong>
-  <%= @store.facebook %>
-</p>
-
-<%= link_to 'Edit', edit_store_path(@store) %> |
-<%= link_to 'Back', stores_path %>
+<div class="wrapper">
+  <div class="section">
+    <div class="col-4">
+      <div class="menu">
+        <i>Display shop logo/image here.</i>
+        <h2><%= @store.name %></h2>
+        <i><%= @store.description %></i>
+        <hr>
+        <p><i class="fa fa-map-marker" aria-hidden="true"></i>  <%= @store.city %></p>
+        <p><i class="fa fa-laptop" aria-hidden="true"></i>  <%= @store.website %></p>
+        <p><i class="fa fa-facebook-official" aria-hidden="true"></i>  <%= link_to "Find us on facebook" %></p>
+      </div>
+    </div>
+    <div class="col-8">
+      <h2>Profile menu</h2>
+      <% @store.products.each do |product| %>
+        <div class="card">
+          <div class="card-image">
+            <%= link_to image_tag(product.image) %>
+          </div>
+          <div class="card-content">
+            <h4><%= link_to product.name, product %></h4>
+            <!-- <p><%= product.description %></p> -->
+            <p class="amount"><%= product.price %></p>
+            <p ><%= product.store.name %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+  <%= link_to 'Edit', edit_store_path(@store) %> |
+  <%= link_to 'Back', stores_path %>
+</div>

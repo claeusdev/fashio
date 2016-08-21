@@ -1,5 +1,12 @@
-<h1>New Store</h1>
+<div class="section">
+  <div class="wrapper">
+    <div class="center">
+      <div class="sign-card cf">
+        <%= render 'form', store: @store %>
+        <br>
 
-<%= render 'form', store: @store %>
-
-<%= link_to 'Back', stores_path %>
+        <%= link_to 'Back', stores_path %>
+      </div>
+    </div>
+  </div>
+</div>

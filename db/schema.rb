@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160818224503) do
+ActiveRecord::Schema.define(version: 20160820213041) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +27,8 @@ ActiveRecord::Schema.define(version: 20160818224503) do
     t.datetime "updated_at",  null: false
     t.integer  "store_id"
     t.string   "image"
+    t.string   "slug"
+    t.index ["slug"], name: "index_products_on_slug", unique: true
     t.index ["store_id"], name: "index_products_on_store_id"
   end
 
@@ -32,6 +41,9 @@ ActiveRecord::Schema.define(version: 20160818224503) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
+    t.string   "slug"
+    t.string   "image"
+    t.index ["slug"], name: "index_stores_on_slug", unique: true
     t.index ["user_id"], name: "index_stores_on_user_id"
   end
 

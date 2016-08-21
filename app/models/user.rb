@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
  has_one :store, dependent: :destroy
- has_many :listings, through: :store,  dependent: :destroy
+ has_many :products, through: :store,  dependent: :destroy
 
  mount_uploader :image, ImageUploader
 end

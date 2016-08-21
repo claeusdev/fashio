@@ -1,28 +1,44 @@
-<div class="wrapper">
-  <div class="section">
-    <div class="col-4">
-      <div class="menu">
-        <h2>My Account</h2>
-        <p><%= @user.email %></p>
-        <hr>
-        <p>My Orders</p>
-        <hr>
-        <h4>My credits</h4>
-        <li>My coupons</li>
-        <li>My coupons</li>
-        <li>claeus points</li>
-        <hr>
-        <h4>Account</h4>
-        <li>My profile</li>
-        <li>My contact cards</li>
-        <li>Contacts</li>
-        <hr>
-        <p><%= @user.created_at %></p>
+<div class="section">
+  <div class="wrapper">
+    <% if user_signed_in? && current_user == @user %>
+      <!-- true -->
+      <div class="row cf">
+        <div class="col-4">
+          <div class="menu">
+            <h2>My Account</h2>
+            <p><%= @user.email %></p>
+            <hr>
+            <p>My Orders</p>
+            <hr>
+            <h4>My credits</h4>
+            <li>My coupons</li>
+            <li>My coupons</li>
+            <li>claeus points</li>
+            <hr>
+            <h4>Account</h4>
+            <li>My profile</li>
+            <li>My contact cards</li>
+            <li>Contacts</li>
+            <hr>
+            <p><%= @user.created_at %></p>
+            <% if @user.store.present? %>
+              <!-- true -->
+              <%= link_to "Add item", new_product_path, class: "button" %>
+              <% else %>
+              <h3>You need to create a store before you can add products.</h3>
+              <%= link_to "Start a store", new_store_path, class: "button" %>
+            <% end %>
+
+          </div>
+        </div>
+        <div class="col-8">
+          <h2>Profile menu</h2>
+          <h2><%= @user.email %></h2>
+        </div>
       </div>
-    </div>
-    <div class="col-8">
-      <h2>Profile menu</h2>
-      <h2><%= @user.email %></h2>
-    </div>
+    <% else %>
+
+    <% end %>
+
   </div>
 </div>

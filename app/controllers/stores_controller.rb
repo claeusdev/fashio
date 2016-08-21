@@ -10,6 +10,7 @@ class StoresController < ApplicationController
   # GET /stores/1
   # GET /stores/1.json
   def show
+
   end
 
   # GET /stores/new
@@ -64,7 +65,7 @@ class StoresController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_store
-      @store = Store.find(params[:id])
+      @store = Store.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

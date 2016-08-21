@@ -1,3 +1,4 @@
+
 <%= form_for(store) do |f| %>
   <% if store.errors.any? %>
     <div id="error_explanation">
@@ -11,32 +12,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+  <div class="form-inputs">
 
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
+    <%= f.text_field :name, placeholder: "Store name" %>
+  </div><br>
 
-  <div class="field">
-    <%= f.label :city %>
-    <%= f.text_field :city %>
-  </div>
+  <div class="form-inputs">
 
-  <div class="field">
-    <%= f.label :website %>
-    <%= f.text_field :website %>
-  </div>
+    <%= f.text_area :description, placeholder: "Describe your store in a few and catchy words" %>
+  </div><br>
 
-  <div class="field">
-    <%= f.label :facebook %>
-    <%= f.text_field :facebook %>
-  </div>
+  <div class="form-inputs">
+
+    <%= f.text_field :city, placeholder: "Which city is your store located in?" %>
+  </div><br>
+
+  <div class="form-inputs">
+
+    <%= f.text_field :website, placeholder: "Does your store have a website?" %>
+  </div><br>
+
+  <div class="form-inputs">
+
+    <%= f.text_field :facebook, placeholder: "Does your store have a facebook page?" %>
+  </div><br>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button" %>
   </div>
-<% end %>
+  <% end %>
