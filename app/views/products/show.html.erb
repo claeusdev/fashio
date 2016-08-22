@@ -7,6 +7,8 @@
     </div>
     <div class="col-6">
       <div class="prdt-caption">
+        <div class="star-rating" data-score= <%= @avg_review %> ></div>
+        <em><%= "#{@reviews.length} reviews" %></em>
         <h2><%= @product.name %></h2>
         <h4>BY <%= link_to @product.store.name %></h4>
         <h2 class="amount"><%= @product.price %></h2>
@@ -28,7 +30,40 @@
       </div>
     </div>
   </div>
+  <div class="row cf">
+    <div class="col-6">
+        <p>Item Details</p>
+    </div>
+    <div class="col-6">
+        <h2>Reviews</h2>
+        <% if @reviews.blank? %>
+          <!-- true -->
+          <p>This item has not been reviewed yet.</p>
+          <%= link_to "Add a review", new_product_review_path(@product), class: "button" %>
+        <% else %>
+          <!-- false -->
+          <% @reviews.each do |review| %>
+            <div class="reviews">
+              <div class="star-rating" data-score= <%= review.rating %> ></div>
+              <p><%= review.comment %></p>
+            </div>
+          <% end %>
+          <br>
+          <%= link_to "Add a review", new_product_review_path(@product), class: "button" %>
+        <% end %>
+    </div>
+  </div>
 </div>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>
+
+<script>
+    $('.star-rating').raty({
+      path: '/assets/',
+      readOnly: true,
+      score: function() {
+            return $(this).attr('data-score');
+    }
+  });
+</script>

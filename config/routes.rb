@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
+
   resources :categories
   get 'user/show'
 
   devise_for :users
   resources :users
-  resources :products
+  resources :products do
+    resources :reviews
+  end
   resources :stores
   get 'pages/index'
 

@@ -17,6 +17,7 @@ gem 'rmagick'
 gem 'friendly_id', '~> 5.1.0'
 gem "font-awesome-rails"
 gem "fog-aws"
+gem "figaro"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

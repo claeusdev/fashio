@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
  has_one :store, dependent: :destroy
  has_many :products, through: :store,  dependent: :destroy
-
+ has_many :reviews, dependent: :destroy
+ 
  mount_uploader :image, ImageUploader
 end
